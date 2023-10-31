@@ -1,0 +1,269 @@
+[
+    {
+        "nomeSecretaria": "INFRA ESTRUTURA",
+        "abastecimentos": {
+            "quantidade_lt": 9302.622000000001,
+            "valor_total": -463631.89124219713,
+            "quantidade_abastecimentos": 217
+        },
+        "porCombustivel": {
+            "1": {
+                "quantidade_lt": 6779.820000000001,
+                "valor_total": 25702.658867339997,
+                "valor_lt": 0
+            },
+            "2": {
+                "quantidade_lt": 1415.072,
+                "valor_total": -499738.84651392,
+                "valor_lt": 0
+            },
+            "3": {
+                "quantidade_lt": 1107.73,
+                "valor_total": 6775.296404383001,
+                "valor_lt": 0
+            },
+            "4": {
+                "quantidade_lt": 0,
+                "valor_total": 3629,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "SAÚDE",
+        "abastecimentos": {
+            "quantidade_lt": 8656.672000000004,
+            "valor_total": -1814341.9932472308,
+            "quantidade_abastecimentos": 199
+        },
+        "porCombustivel": {
+            "1": {
+                "quantidade_lt": 639.961,
+                "valor_total": 2436.2893106369997,
+                "valor_lt": 0
+            },
+            "2": {
+                "quantidade_lt": 5192.890000000002,
+                "valor_total": -1833891.7445004003,
+                "valor_lt": 0
+            },
+            "3": {
+                "quantidade_lt": 2823.821,
+                "valor_total": 17113.461942531507,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "SAÚDE EPIDEMIOLÓGICA",
+        "abastecimentos": {
+            "quantidade_lt": 5,
+            "valor_total": 29.0209685,
+            "quantidade_abastecimentos": 1
+        },
+        "porCombustivel": {
+            "3": {
+                "quantidade_lt": 5,
+                "valor_total": 29.0209685,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "SAÚDE SANITÁRIA",
+        "abastecimentos": {
+            "quantidade_lt": 60,
+            "valor_total": 361.809348,
+            "quantidade_abastecimentos": 6
+        },
+        "porCombustivel": {
+            "3": {
+                "quantidade_lt": 60,
+                "valor_total": 361.809348,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "ASSISTÊNCIA SOCIAL",
+        "abastecimentos": {
+            "quantidade_lt": 919.9359999999999,
+            "valor_total": -151840.37430471828,
+            "quantidade_abastecimentos": 20
+        },
+        "porCombustivel": {
+            "1": {
+                "quantidade_lt": 40,
+                "valor_total": 118.03428,
+                "valor_lt": 0
+            },
+            "2": {
+                "quantidade_lt": 438.08,
+                "valor_total": -154709.8620288,
+                "valor_lt": 0
+            },
+            "3": {
+                "quantidade_lt": 441.856,
+                "valor_total": 2751.4534440816997,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "EDUCAÇÃO",
+        "abastecimentos": {
+            "quantidade_lt": 10698.628,
+            "valor_total": -2334154.8591826465,
+            "quantidade_abastecimentos": 126
+        },
+        "porCombustivel": {
+            "1": {
+                "quantidade_lt": 3556.0459999999994,
+                "valor_total": 13716.216625293,
+                "valor_lt": 0
+            },
+            "2": {
+                "quantidade_lt": 6662.04,
+                "valor_total": -2352728.4724943996,
+                "valor_lt": 0
+            },
+            "3": {
+                "quantidade_lt": 480.54200000000003,
+                "valor_total": 2882.39668646,
+                "valor_lt": 0
+            },
+            "4": {
+                "quantidade_lt": 0,
+                "valor_total": 1975,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "MEIO AMBIENTE",
+        "abastecimentos": {
+            "quantidade_lt": 0,
+            "valor_total": 0,
+            "quantidade_abastecimentos": 0
+        },
+        "porCombustivel": {}
+    },
+    {
+        "nomeSecretaria": "CULTURA",
+        "abastecimentos": {
+            "quantidade_lt": 349.661,
+            "valor_total": 1541.376180761,
+            "quantidade_abastecimentos": 5
+        },
+        "porCombustivel": {
+            "1": {
+                "quantidade_lt": 299.661,
+                "valor_total": 1251.166495761,
+                "valor_lt": 0
+            },
+            "3": {
+                "quantidade_lt": 50,
+                "valor_total": 290.209685,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "ADMINISTRAÇÃO",
+        "abastecimentos": {
+            "quantidade_lt": 8868.551000000001,
+            "valor_total": -1937509.5182131524,
+            "quantidade_abastecimentos": 149
+        },
+        "porCombustivel": {
+            "1": {
+                "quantidade_lt": 1681.076,
+                "valor_total": 8818.519987368,
+                "valor_lt": 0
+            },
+            "2": {
+                "quantidade_lt": 5539.9800000000005,
+                "valor_total": -1956468.0913127998,
+                "valor_lt": 0
+            },
+            "3": {
+                "quantidade_lt": 1647.495,
+                "valor_total": 10140.053112279904,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "AGRICULTURA",
+        "abastecimentos": {
+            "quantidade_lt": 445.02,
+            "valor_total": -54827.2919895,
+            "quantidade_abastecimentos": 22
+        },
+        "porCombustivel": {
+            "1": {
+                "quantidade_lt": 30,
+                "valor_total": 113.56254,
+                "valor_lt": 0
+            },
+            "2": {
+                "quantidade_lt": 160.02,
+                "valor_total": -56511.7606872,
+                "valor_lt": 0
+            },
+            "3": {
+                "quantidade_lt": 255,
+                "valor_total": 1570.9061576999998,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "TURISMO",
+        "abastecimentos": {
+            "quantidade_lt": 20,
+            "valor_total": 129.6416,
+            "quantidade_abastecimentos": 1
+        },
+        "porCombustivel": {
+            "3": {
+                "quantidade_lt": 20,
+                "valor_total": 129.6416,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "SECOM",
+        "abastecimentos": {
+            "quantidade_lt": 0,
+            "valor_total": 0,
+            "quantidade_abastecimentos": 0
+        },
+        "porCombustivel": {}
+    },
+    {
+        "nomeSecretaria": "PLANEJAMENTO",
+        "abastecimentos": {
+            "quantidade_lt": 29,
+            "valor_total": 179.16779810000003,
+            "quantidade_abastecimentos": 6
+        },
+        "porCombustivel": {
+            "3": {
+                "quantidade_lt": 29,
+                "valor_total": 179.16779810000003,
+                "valor_lt": 0
+            }
+        }
+    },
+    {
+        "nomeSecretaria": "AD",
+        "abastecimentos": {
+            "quantidade_lt": 0,
+            "valor_total": 0,
+            "quantidade_abastecimentos": 0
+        },
+        "porCombustivel": {}
+    }
+]
