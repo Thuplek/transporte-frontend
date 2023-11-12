@@ -1,16 +1,20 @@
-
-import PDF from "./PDF/index"
-import RelatorioMensalSecretaria from "./PDF/relatorioMensal/secretaria"
+import { Drawer } from './components/Drawer';
+import { Login } from './pages/login';
+import Routes from './routes';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-
   return (
     <>
-      <RelatorioMensalSecretaria />
+      <BrowserRouter>
+        <Login>
+          <Drawer>
+            <Routes />
+          </Drawer>
+        </Login>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
-
-
+export default App;
