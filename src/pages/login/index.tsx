@@ -8,8 +8,8 @@ import {
   Typography,
 } from '@mui/material';
 import React, { useState } from 'react';
-import AuthStore from '../../strores/auth';
-import { useAuth } from '../../hooks/auth/indesx';
+import AuthStore from '../../stores/auth';
+import { useAuth } from '../../hooks/auth';
 
 interface ILoginProps {
   children: React.ReactNode;

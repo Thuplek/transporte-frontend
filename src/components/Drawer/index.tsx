@@ -42,7 +42,6 @@ const ListItemLink: React.FC<iListItemLink> = ({
   const [opeColapse, setopenColapse] = useState<boolean>(false);
 
   const toggleColapse = () => {
-    console.log('🚀 ~ toggleColapse ~ toggleColapse=>', toggleColapse);
     setopenColapse(!opeColapse);
   };
   const handleClick = () => {
@@ -68,9 +67,10 @@ const ListItemLink: React.FC<iListItemLink> = ({
           ))}
       </ListItemButton>
       <Collapse in={opeColapse} timeout='auto' unmountOnExit>
-        {children?.map((menu) => {
+        {children?.map((menu, index) => {
           return (
             <ListItemLink
+              key={`subitem-menu-${index}`}
               icon={menu?.icon}
               label={menu.label}
               to={menu.to}

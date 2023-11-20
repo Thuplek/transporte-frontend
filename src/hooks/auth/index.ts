@@ -1,7 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import { AuthService } from '../../services/auth/auth';
-import AuthStore from '../../strores/auth';
+import AuthStore from '../../stores/auth';
+
+
 
 export function useAuth() {
+  
   const login = async (email: string, password: string) => {
     const { login } = AuthService;
     const { setIsAutenticated } = AuthStore.getState();
@@ -9,6 +13,8 @@ export function useAuth() {
     const { token } = await login(email, password);
     setIsAutenticated(token);
   };
+
+  
   return {
     login,
   };
