@@ -103,9 +103,7 @@ export const Drawer: React.FC<IDrawer> = ({ children }) => {
           display={'flex'}
           flexDirection={'column'}
         >
-          <Box>
-            Gerenciamento<Icon>home</Icon>
-          </Box>
+          <Box>Gerenciamento</Box>
           <Divider />
           <Box flex={1}>
             <List component={'nav'}>

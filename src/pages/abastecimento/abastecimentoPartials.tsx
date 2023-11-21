@@ -24,7 +24,7 @@ import CustomNumberInput from '@components/CustomNumberInput';
 import { useCreateAbastecimento } from '@hooks/abastecimento';
 
 interface IAbastecimentoPartialsPage {
-  type: 'create' | 'update' | 'delete' | 'list';
+  type?: 'create' | 'update' | 'delete' | 'list';
 }
 
 const formAbastecimentoSchema = z.object({

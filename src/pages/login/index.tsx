@@ -12,11 +12,10 @@ import AuthStore from '../../stores/auth';
 import { useAuth } from '../../hooks/auth';
 
 interface ILoginProps {
-  children: React.ReactNode;
+  // children: React.ReactNode;
 }
 
 export const Login: React.FC<ILoginProps> = ({ children }) => {
-  const { token } = AuthStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useAuth();
@@ -24,9 +23,6 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
     login(email, password);
   };
 
-  if (token) {
-    return <>{children}</>;
-  }
 
   return (
     <Box

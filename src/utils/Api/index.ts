@@ -2,14 +2,14 @@ import axios from 'axios';
 import { errorInterceptor, responseInterceptor } from './interceptors';
 import AuthStore from '../../stores/auth';
 
-const baseURL = 'http://localhost:3000';
-const {token} = AuthStore.getState();
+const baseURL = process.env.VITE_API;
+const { token } = AuthStore.getState();
 
 const API = axios.create({
   baseURL,
-  headers:{
-    authorization: `Bearer ${token}`
-  }
+  headers: {
+    authorization: `Bearer ${token}`,
+  },
 });
 API.interceptors.response.use(
   (response) => responseInterceptor(response),
