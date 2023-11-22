@@ -27,7 +27,7 @@ export const Select: React.FC<ISelect> = ({
         id='combo-box-demo'
         options={options || []}
         value={options?.find((option) => option.value === value) ?? null}
-        sx={{ width: 300 }}
+        sx={{ minWidth: 250 }}
         onChange={(__event, item) => onChange(item?.value)}
         {...rest}
         renderInput={(params) => {

@@ -17,6 +17,7 @@ import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 // import StarBorder from '@mui/icons-material/StarBorder';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import MenuStore from '@stores/menu';
 
 interface IDrawer {
   children: React.ReactNode;
@@ -86,11 +87,9 @@ const ListItemLink: React.FC<iListItemLink> = ({
 export const Drawer: React.FC<IDrawer> = ({ children }) => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
-  const [open, setOpen] = useState<boolean>(false);
+  const {open,toogleOpenMenu} = MenuStore();
 
-  const toogleOpenMenu = () => {
-    setOpen(!open);
-  };
+ 
   return (
     <>
       <DrawerMaterial

@@ -8,7 +8,7 @@
         "to": "/abastecimento/cadastro"
       }
     ],
-    "icon": "fa fa-car"
+    "icon": ""
   },
   { "label": "Combustivel", "to": "/combustivel" },
   { "label": "Lubrificante", "to": "/lubrificante" },

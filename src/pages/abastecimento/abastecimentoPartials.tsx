@@ -77,7 +77,6 @@ export const AbastecimentoPartialsPage: React.FC<
     console.log('🚀 ~ data=>', data);
     mutate(data);
   };
-  console.log('🚀 ~ errors=>', errors);
   const { data: lsVeiculos = [] } = useGetAllVeiculos();
   const { data: lsCombustivel = [] } = useGetAllCombustivel();
   const { data: lsMotorista = [] } = useGetAllMotorista();
@@ -235,6 +234,7 @@ export const AbastecimentoPartialsPage: React.FC<
             display={'flex'}
             alignContent={'flex-end'}
             justifyContent={'flex-end'}
+            p={2}
           >
             <Button variant='contained' type='submit'>
               Enviar
