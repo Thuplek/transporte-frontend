@@ -1,4 +1,3 @@
-import AuthStore from '@stores/auth';
 import { MENSAGENS } from '@utils/conts';
 import { AxiosError } from 'axios';
 

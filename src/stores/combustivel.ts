@@ -12,7 +12,7 @@ const initialState = {
 
 
 
-const CombustivelStore = create<StoreType>((set, get) => ({
+const CombustivelStore = create<StoreType>((set) => ({
   ...initialState,
   setLsCombustivel: (lsCombustivel) => set(() => ({ lsCombustivel })),
   

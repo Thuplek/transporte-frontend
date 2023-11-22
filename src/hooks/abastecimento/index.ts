@@ -6,7 +6,7 @@ import { useMutation } from '@tanstack/react-query';
 export function useAbastecimento() {
   const getAll = async () => {
     const { setLsAbastecimento } = AbastecimentoStore.getState();
-    const { data } = await AbastecimentoService.getAll();
+    const data  = await AbastecimentoService.getAll();
     setLsAbastecimento(data);
   };
 
@@ -18,10 +18,9 @@ export function useCreateAbastecimento() {
   const { token } = AuthStore.getState();
 
   const query = useMutation({
-    queryKey: ['createAbastecimento'],
+    // queryKey: ['createAbastecimento'],
     mutationFn: AbastecimentoService.create,
     meta: { headers: { authorization: `Bearer ${token}` } },
   });
   return query;
-
 }

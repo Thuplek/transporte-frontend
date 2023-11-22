@@ -14,7 +14,7 @@ import {
 import ItensMenu from './ItensMenu.json';
 import React, { useState } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
-import StarBorder from '@mui/icons-material/StarBorder';
+// import StarBorder from '@mui/icons-material/StarBorder';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 

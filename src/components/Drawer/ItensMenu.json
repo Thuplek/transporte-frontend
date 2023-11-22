@@ -2,10 +2,13 @@
   {
     "label": "Abastecimento",
     "to": "/abastecimento",
-    "children": [{
-      "label": "cadastro",
-      "to": "/abastecimento/cadastro"
-    }]
+    "children": [
+      {
+        "label": "cadastro",
+        "to": "/abastecimento/cadastro"
+      }
+    ],
+    "icon": "fa fa-car"
   },
   { "label": "Combustivel", "to": "/combustivel" },
   { "label": "Lubrificante", "to": "/lubrificante" },

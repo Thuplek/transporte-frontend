@@ -4,7 +4,6 @@ import { LayoutBase } from '../../layout';
 import {
   DataGrid,
   GridColDef,
-  GridToolbar,
   GridValueFormatterParams,
   GridValueGetterParams,
 } from '@mui/x-data-grid';
@@ -32,7 +31,7 @@ import CustomToolbar from '@components/CustomToolbarDataGrid';
 export const AbastecimentoPage = () => {
   const { getAll } = useAbastecimento();
   const { lsAbastecimento } = AbastecimentoStore();
-  const { data: lsVeiculo = [] } = useGetAllVeiculos();
+  const { data: lsVeiculo } = useGetAllVeiculos();
   const { data: lsCombustivel = [] } = useGetAllCombustivel();
   const { data: lsMotorista = [] } = useGetAllMotorista();
   const { data: lsLubrificante = [] } = useGetAllLubrificante();

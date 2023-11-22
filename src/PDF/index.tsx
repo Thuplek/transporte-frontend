@@ -1,12 +1,10 @@
 import {
   Document,
   Page,
-  Text,
-  View,
+ 
   StyleSheet,
   PDFViewer,
   
-  Note,
 } from '@react-pdf/renderer';
 // Create styles
 const styles = StyleSheet.create({
@@ -21,12 +19,12 @@ const styles = StyleSheet.create({
   },
 });
 
-import lista from './mock.json';
-import Table from './Components/Table';
-import ItemsTable from './Components/Table/ItemsTable';
-const RenderDados = () => {
-    return "teste"
-}
+// import lista from './mock.json';
+// import Table from './Components/Table';
+// import ItemsTable from './Components/Table/ItemsTable';
+// const RenderDados = () => {
+//     return "teste"
+// }
 // Create Document Component
 function BasicDocument() {
   return (
@@ -37,7 +35,7 @@ function BasicDocument() {
 
         {/*render a single page*/}
         <Page orientation='landscape' size='A4' style={styles.page}>
-            <ItemsTable data={lista} />
+            {/* <ItemsTable data={lista} /> */}
          
        
         </Page>

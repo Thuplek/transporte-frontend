@@ -8,21 +8,19 @@ import {
   Typography,
 } from '@mui/material';
 import React, { useState } from 'react';
-import AuthStore from '../../stores/auth';
 import { useAuth } from '../../hooks/auth';
 
 interface ILoginProps {
   // children: React.ReactNode;
 }
 
-export const Login: React.FC<ILoginProps> = ({ children }) => {
+export const Login: React.FC<ILoginProps> = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useAuth();
   const handleSubmit = () => {
     login(email, password);
   };
-
 
   return (
     <Box

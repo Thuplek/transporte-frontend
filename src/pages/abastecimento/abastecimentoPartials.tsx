@@ -69,7 +69,7 @@ export const AbastecimentoPartialsPage: React.FC<
   } = useForm<formaAbastecimentoType>({
     resolver: zodResolver(formAbastecimentoSchema),
     defaultValues: {
-      date: new Date().toISOString(),
+      date: new Date(),
     },
   });
   const { mutate } = useCreateAbastecimento();

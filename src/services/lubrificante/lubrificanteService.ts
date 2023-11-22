@@ -1,20 +1,19 @@
 import { MENSAGENS } from '@utils/conts';
 import { API } from '../../utils/Api';
+import { ILubrificante } from '@app/interfaces/lubrificante';
 
-interface ILubrificante {
-  data: [];
-}
-
-const getAll = async (): Promise<ILubrificante | Error> => {
+const getAll = async (): Promise<ILubrificante[]> => {
   try {
     const { data } = await API.get('/lubrificante');
     if (data) {
       return data;
     }
-    return new Error(MENSAGENS.ERRO_AO_BUSCAR_DADOS);
+    new Error(MENSAGENS.ERRO_AO_BUSCAR_DADOS);
+    return [];
   } catch (error) {
     console.error(error);
-    return new Error();
+    new Error();
+    return [];
   }
 };
 export const LubrificanteService = {

@@ -1,23 +1,21 @@
 import { API } from '../../utils/Api';
 
 interface IAuth {
-  token: string;
+  token?: string;
 }
 
-
-const login = async (
-  email: string,
-  password: string
-  ): Promise<IAuth | Error> => {
-    try {
-    const { data } = await API.post('/login', { password, email });
+const login = async (email: string, password: string): Promise<IAuth> => {
+  try {
+    const { data } = await API.post<IAuth>('/login', { password, email });
     if (data.token) {
-      return data
-    } 
-    return new Error('Erro ao tentar fazer login');
+      return data;
+    }
+    new Error('Erro ao tentar fazer login');
+    return { token: undefined };
   } catch (error) {
     console.error(error);
-    return new Error();
+    new Error('Erro ao tentar fazer login');
+    return { token: undefined}
   }
 };
 export const AuthService = {

@@ -1,36 +1,33 @@
 import { API } from '../../utils/Api';
 import { IAbastecimento } from '@interfaces/abastecimentos';
 
-interface IAbastecimentoResponse {
-  data: IAbastecimento[];
-}
-interface IAbastecimentoRequest {
-  data: [];
-}
-
-const getAll = async (): Promise<IAbastecimentoResponse | Error> => {
+const getAll = async (): Promise<IAbastecimento[]> => {
   try {
-    const { data } = await API.get('/abastecimento');
+    const { data } = await API.get<IAbastecimento[]>('/abastecimento');
     if (data) {
-      return { data };
+      return data;
     }
-    return new Error('Erro ao tentar fazer login');
+    new Error('Erro ao tentar fazer login');
+    return [];
   } catch (error) {
     console.error(error);
-    return new Error();
+    new Error();
+    return [];
   }
 };
 
-const create = async (data: any): Promise<IAbastecimentoRequest | Error> => {
+const create = async (data: any): Promise<IAbastecimento[]> => {
   try {
     const response = await API.post('/abastecimento', data);
     if (response) {
       return response.data;
     }
-    return new Error('Erro ao tentar cadastrar abastecimento');
+    new Error('Erro ao tentar cadastrar abastecimento');
+    return [];
   } catch (error) {
     console.error(error);
-    return new Error();
+    new Error();
+    return [];
   }
 };
 export const AbastecimentoService = {

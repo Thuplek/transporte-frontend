@@ -2,7 +2,7 @@ import AuthStore from '@stores/auth';
 import { Navigate } from 'react-router-dom';
 
 interface IRequireAuth {
-  children: React.ReactNode | React.FC;
+  children: React.ReactNode;
   redirectTo?: string;
 }
 
@@ -11,5 +11,5 @@ export const RequireAuth: React.FC<IRequireAuth> = ({
   redirectTo = '/login',
 }) => {
   const { token } = AuthStore();
-  return token ? children : <Navigate to={redirectTo} />;
+  return token ? <>{children}</> : <Navigate to={redirectTo} />;
 };

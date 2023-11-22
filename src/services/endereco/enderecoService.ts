@@ -1,20 +1,19 @@
 import { MENSAGENS } from '@utils/conts';
 import { API } from '../../utils/Api';
+import { IEndereco } from '@app/interfaces/endereco';
 
-interface IEndereco {
-  data: [];
-}
-
-const getAll = async (): Promise<IEndereco | Error> => {
+const getAll = async (): Promise<IEndereco[]> => {
   try {
     const { data } = await API.get('/endereco');
     if (data) {
       return data;
     }
-    return new Error(MENSAGENS.ERRO_AO_BUSCAR_DADOS);
+    new Error(MENSAGENS.ERRO_AO_BUSCAR_DADOS);
+    return [];
   } catch (error) {
     console.error(error);
-    return new Error();
+    new Error();
+    return [];
   }
 };
 export const EnderecoService = {

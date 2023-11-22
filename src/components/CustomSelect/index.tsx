@@ -1,5 +1,5 @@
 import { Autocomplete, Box, MenuItem, TextField } from '@mui/material';
-import { Control, FieldValues, Controller } from 'react-hook-form';
+import { Control, Controller } from 'react-hook-form';
 interface ISelect {
   options?: { label: string; value: string | number }[];
   name: string;
@@ -42,9 +42,11 @@ export const Select: React.FC<ISelect> = ({
         }}
         renderOption={(props, { label, value }) => {
           return (
+            //@ts-ignore
             props['data-option-index'] < 10 && (
               <MenuItem
                 {...props}
+            //@ts-ignore
                 key={`${value}-${props['data-option-index']}`}
                 value={value}
               >

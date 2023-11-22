@@ -1,20 +1,19 @@
 import { MENSAGENS } from '@utils/conts';
 import { API } from '../../utils/Api';
+import { ICombustivel } from '@app/interfaces/combustivel';
 
-interface ICombustivel {
-  data: [];
-}
-
-const getAll = async (): Promise<ICombustivel | Error> => {
+const getAll = async (): Promise<ICombustivel[]> => {
   try {
     const { data } = await API.get('/combustivel');
     if (data) {
       return data;
     }
-    return new Error(MENSAGENS.ERRO_AO_BUSCAR_DADOS);
+    new Error(MENSAGENS.ERRO_AO_BUSCAR_DADOS);
+    return [];
   } catch (error) {
     console.error(error);
-    return new Error();
+    new Error();
+    return [];
   }
 };
 export const CombustivelService = {
