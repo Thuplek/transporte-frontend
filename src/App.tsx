@@ -25,7 +25,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename='/'>
         <ThemeProvider theme={theme}>
           <QueryClientProvider client={queryClient}>
             <RoutesReactDom>
