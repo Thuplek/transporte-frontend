@@ -25,11 +25,11 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <>
-      <BrowserRouter basename='/'>
+      <BrowserRouter >
         <ThemeProvider theme={theme}>
           <QueryClientProvider client={queryClient}>
             <RoutesReactDom>
-              <Route path='/login' element={<Login />} />
+              <Route  path='/login' element={<Login />} />
             </RoutesReactDom>
             <RequireAuth>
               <Drawer>

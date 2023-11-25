@@ -8,7 +8,10 @@ export function useAuth() {
 
     const { token } = await login(email, password);
     setIsAutenticated(token);
-    window.location.href = '/abastecimento';
+    //@ts-ignore
+    const baseURLFront = process.env.VITE_URL_FRONT;
+
+    window.location.href = baseURLFront + '/abastecimento';
   };
 
   return {
