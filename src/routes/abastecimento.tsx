@@ -1,4 +1,3 @@
-// ==============================|| AUTH ROUTING ||============================== //
 
 import { RequireAuth } from '@components/RequireAuth';
 import { AbastecimentoPage } from '../pages/abastecimento';

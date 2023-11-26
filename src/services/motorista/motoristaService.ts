@@ -16,7 +16,22 @@ const getAll = async (): Promise<IMotorista[]> => {
     return [];
   }
 };
+const create = async (data: any): Promise<IMotorista[]> => {
+  try {
+    const response = await API.post('/motorista', data);
+    if (response) {
+      return response.data;
+    }
+    new Error('Erro ao tentar cadastrar Motorista');
+    return [];
+  } catch (error) {
+    console.error(error);
+    new Error();
+    return [];
+  }
+};
 export const CombustivelService = {
   getAll,
+  create,
 };
 export default CombustivelService;

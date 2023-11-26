@@ -10,6 +10,16 @@
     ],
     "icon": ""
   },
+  {
+    "label": "Motorista",
+    "to": "/motorista",
+    "children": [
+      {
+        "label": "cadastro",
+        "to": "/motorista/cadastro"
+      }
+    ]
+  },
   { "label": "Combustivel", "to": "/combustivel" },
   { "label": "Lubrificante", "to": "/lubrificante" },
   { "label": "Veiculo", "to": "/Veiculo" }
