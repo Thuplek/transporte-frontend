@@ -8,7 +8,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useUpdateCombustivel } from '@hooks/combustivel/combustivelHook';
 import { useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { type } from 'os';
 import CustomNumberInput from '@components/CustomNumberInput';
 
 interface IVeiculoPartialsPage {

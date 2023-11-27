@@ -1,10 +1,5 @@
 import { LayoutBase } from '../../layout';
-import {
-  DataGrid,
-  GridColDef,
-  GridValueFormatterParams,
-  GridValueGetterParams,
-} from '@mui/x-data-grid';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 import { useGetAllCombustivel } from '@hooks/combustivel/combustivelHook';
 import { ActionsButtons } from './actionsButtons';
@@ -18,6 +13,7 @@ export const CombustivelPage = () => {
     {
       field: 'actions',
       headerName: 'Ações',
+      //@ts-ignore
       renderCell: (params) => <ActionsButtons {...params} />,
       // {
       //   console.log('🚀 ~ CombustivelPage ~ params=>', params);
