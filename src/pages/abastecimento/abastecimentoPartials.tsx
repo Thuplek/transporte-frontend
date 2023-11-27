@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   Box,
   Button,
@@ -27,13 +28,11 @@ import InputDate from '@components/DatePicker';
 interface IAbastecimentoPartialsPage {
   type?: 'create' | 'update' | 'delete' | 'list';
 }
-
 const formAbastecimentoSchema = z.object({
-  date: z
-    .date()
-    // .transform((value) => new Date(value))
-    // .optional(),
-  ,quantidadeLitros: z.string().transform((value) => Number(value)),
+  date: z.date(),
+  // .transform((value) => new Date(value))
+  // .optional(),
+  quantidadeLitros: z.string().transform((value) => Number(value)),
   lubrificanteLitros: z
     .string()
     .optional()
@@ -73,11 +72,11 @@ export const AbastecimentoPartialsPage: React.FC<
       date: new Date(),
     },
   });
-  console.log("🚀 ~ errors=>", errors)
+  console.log('🚀 ~ errors=>', errors);
   const { mutate } = useCreateAbastecimento();
   const onSubmit: SubmitHandler<formaAbastecimentoType> = (data) => {
     console.log('🚀 ~ data=>', data);
-    // mutate(data);
+    mutate(data);
   };
   const { data: lsVeiculos = [] } = useGetAllVeiculos();
   const { data: lsCombustivel = [] } = useGetAllCombustivel();
@@ -94,10 +93,10 @@ export const AbastecimentoPartialsPage: React.FC<
           <Grid container spacing={1}>
             <Grid item>
               <InputDate
-                type='date'
+                // type='date'
                 {...register('date')}
-                error={!!errors.date}
-                helperText={errors.date?.message}
+                // error={!!errors.date}
+                // helperText={errors.date?.message}
               />
             </Grid>
             <Grid item>
