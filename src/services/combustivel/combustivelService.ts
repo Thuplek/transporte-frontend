@@ -16,7 +16,23 @@ const getAll = async (): Promise<ICombustivel[]> => {
     return [];
   }
 };
+const update = async (data: any): Promise<ICombustivel[]> => {
+  console.log("🚀 ~ update ~ data=>", data)
+  try {
+    const response = await API.patch(`/combustivel/${data?.id}`, data);
+    if (response) {
+      return response.data;
+    }
+    new Error('Erro ao tentar atualizar combustivel');
+    return [];
+  } catch (error) {
+    console.error(error);
+    new Error();
+    return [];
+  }
+};
 export const CombustivelService = {
   getAll,
+  update,
 };
 export default CombustivelService;
