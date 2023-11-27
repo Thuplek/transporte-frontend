@@ -53,7 +53,7 @@ export const AbastecimentoPage = () => {
       type: 'dateTime',
       valueGetter: (params: GridValueGetterParams) => new Date(params.row.data),
       valueFormatter: (params: GridValueFormatterParams<Date>) =>
-        visualizeDate(params.value),
+        visualizeDate(params.value,params),
     },
     {
       field: 'obs',

@@ -22,6 +22,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import CustomNumberInput from '@components/CustomNumberInput';
 import { useCreateAbastecimento } from '@hooks/abastecimento';
+import InputDate from '@components/DatePicker';
 
 interface IAbastecimentoPartialsPage {
   type?: 'create' | 'update' | 'delete' | 'list';
@@ -29,10 +30,10 @@ interface IAbastecimentoPartialsPage {
 
 const formAbastecimentoSchema = z.object({
   date: z
-    .string()
-    .transform((value) => new Date(value))
-    .optional(),
-  quantidadeLitros: z.string().transform((value) => Number(value)),
+    .date()
+    // .transform((value) => new Date(value))
+    // .optional(),
+  ,quantidadeLitros: z.string().transform((value) => Number(value)),
   lubrificanteLitros: z
     .string()
     .optional()
@@ -72,10 +73,11 @@ export const AbastecimentoPartialsPage: React.FC<
       date: new Date(),
     },
   });
+  console.log("🚀 ~ errors=>", errors)
   const { mutate } = useCreateAbastecimento();
   const onSubmit: SubmitHandler<formaAbastecimentoType> = (data) => {
     console.log('🚀 ~ data=>', data);
-    mutate(data);
+    // mutate(data);
   };
   const { data: lsVeiculos = [] } = useGetAllVeiculos();
   const { data: lsCombustivel = [] } = useGetAllCombustivel();
@@ -91,7 +93,7 @@ export const AbastecimentoPartialsPage: React.FC<
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={1}>
             <Grid item>
-              <TextField
+              <InputDate
                 type='date'
                 {...register('date')}
                 error={!!errors.date}

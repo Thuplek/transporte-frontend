@@ -7,6 +7,7 @@ export function useAbastecimento() {
   const getAll = async () => {
     const { setLsAbastecimento } = AbastecimentoStore.getState();
     const data  = await AbastecimentoService.getAll();
+    console.log("🚀 ~ getAll ~ data=>", data)
     setLsAbastecimento(data);
   };
 
