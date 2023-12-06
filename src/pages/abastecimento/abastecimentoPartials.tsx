@@ -24,14 +24,17 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import CustomNumberInput from '@components/CustomNumberInput';
 import { useCreateAbastecimento } from '@hooks/abastecimento';
 import InputDate from '@components/DatePicker';
+import { useEffect } from 'react';
+import useNotificar from '@hooks/Notificar';
 
 interface IAbastecimentoPartialsPage {
   type?: 'create' | 'update' | 'delete' | 'list';
 }
 const formAbastecimentoSchema = z.object({
-  date: z.date(),
-  // .transform((value) => new Date(value))
-  // .optional(),
+  date: z
+    .string()
+    .transform((value) => new Date(value))
+    .optional(),
   quantidadeLitros: z.string().transform((value) => Number(value)),
   lubrificanteLitros: z
     .string()
@@ -65,18 +68,39 @@ export const AbastecimentoPartialsPage: React.FC<
     register,
     handleSubmit,
     control,
+    setValue,
     formState: { errors },
   } = useForm<formaAbastecimentoType>({
     resolver: zodResolver(formAbastecimentoSchema),
     defaultValues: {
-      date: new Date(),
+      date: new Date().toISOString(),
     },
   });
-  console.log('🚀 ~ errors=>', errors);
-  const { mutate } = useCreateAbastecimento();
+  const { mutate, isSuccess } = useCreateAbastecimento();
   const onSubmit: SubmitHandler<formaAbastecimentoType> = (data) => {
-    console.log('🚀 ~ data=>', data);
     mutate(data);
+  };
+  // const { notificar } = useNotificar();
+  useEffect(() => {
+    limparValoresForm();
+  }, [isSuccess]);
+  const limparValoresForm = () => {
+    if (isSuccess) {
+      setValue('date', new Date());
+      setValue('quantidadeLitros', '');
+      setValue('lubrificanteLitros', '');
+      setValue('combustivel', '');
+      setValue('veiculo', '');
+      setValue('kmVeiculo', '');
+      setValue('motorista', '');
+      setValue('lubrificante', '');
+      setValue('posto', '');
+      setValue('secretaria', '');
+      setValue('cota', false);
+      setValue('observacao', '');
+      setValue('autorizacao', '');
+      setValue('endereco', '');
+    }
   };
   const { data: lsVeiculos = [] } = useGetAllVeiculos();
   const { data: lsCombustivel = [] } = useGetAllCombustivel();
@@ -93,10 +117,12 @@ export const AbastecimentoPartialsPage: React.FC<
           <Grid container spacing={1}>
             <Grid item>
               <InputDate
+                register={register}
                 // type='date'
-                {...register('date')}
-                // error={!!errors.date}
-                // helperText={errors.date?.message}
+                control={control}
+                name='date'
+                error={!!errors.date}
+                helperText={errors.date?.message}
               />
             </Grid>
             <Grid item>

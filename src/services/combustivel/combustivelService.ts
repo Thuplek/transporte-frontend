@@ -17,7 +17,6 @@ const getAll = async (): Promise<ICombustivel[]> => {
   }
 };
 const update = async (data: any): Promise<ICombustivel[]> => {
-  console.log("🚀 ~ update ~ data=>", data)
   try {
     const response = await API.patch(`/combustivel/${data?.id}`, data);
     if (response) {

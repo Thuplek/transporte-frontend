@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { SnackbarProvider } from 'notistack';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ptBR } from '@mui/x-data-grid';
@@ -25,18 +26,25 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <>
-      <BrowserRouter >
+      <BrowserRouter>
         <ThemeProvider theme={theme}>
           <QueryClientProvider client={queryClient}>
-            <RoutesReactDom>
-              <Route  path='/login' element={<Login />} />
-            </RoutesReactDom>
-            <RequireAuth>
-              <Drawer>
-                <Routes />
-              </Drawer>
-            </RequireAuth>
-            <ReactQueryDevtools />
+            <SnackbarProvider
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+            >
+              <RoutesReactDom>
+                <Route path='/login' element={<Login />} />
+              </RoutesReactDom>
+              <RequireAuth>
+                <Drawer>
+                  <Routes />
+                </Drawer>
+              </RequireAuth>
+              <ReactQueryDevtools />
+            </SnackbarProvider>
           </QueryClientProvider>
         </ThemeProvider>
       </BrowserRouter>

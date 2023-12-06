@@ -40,7 +40,6 @@ export const CombustivelPartialsPage: React.FC<IVeiculoPartialsPage> = ({
   const { state } = useLocation();
 
   const searchDadosUpdate = () => {
-    console.log('🚀 ~ searchDadosUpdate ~ state=>', state);
     if (type === 'update') {
       const { valor, nome } = state || {};
       setValue('valor', valor.toString());
