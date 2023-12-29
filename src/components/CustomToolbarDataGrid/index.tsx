@@ -14,6 +14,7 @@ import {
 } from '@mui/x-data-grid';
 import MenuItem from '@mui/material/MenuItem';
 import { ButtonProps } from '@mui/material/Button';
+import { GerarPdf } from './GerarPdf/gerarPdf';
 
 const getJson = (apiRef: React.MutableRefObject<GridApi>) => {
   // Select rows and columns
@@ -71,6 +72,7 @@ function JsonExportMenuItem(props: GridExportMenuItemProps<{}>) {
   );
 }
 
+
 const csvOptions: GridCsvExportOptions = { delimiter: ';' };
 
 function CustomExportButton(props: ButtonProps) {
@@ -78,6 +80,7 @@ function CustomExportButton(props: ButtonProps) {
     <GridToolbarExportContainer {...props}>
       <GridCsvExportMenuItem options={csvOptions} />
       <JsonExportMenuItem />
+      <GerarPdf />
     </GridToolbarExportContainer>
   );
 }
