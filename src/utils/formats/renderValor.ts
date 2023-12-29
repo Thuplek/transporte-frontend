@@ -1,6 +1,6 @@
 import { formatLts, formatMoney } from '@utils/format';
-import { formatDecimal } from './decimal';
 import { visualizeDate } from './date';
+import { ReactNode } from 'react';
 
 export const renderValorTypeOf = (value: string | number | Date) => {
   switch (typeof value) {
@@ -17,8 +17,8 @@ export const renderValorTypeOf = (value: string | number | Date) => {
 };
 export const renderValorPdfName = (
   name: string,
-  value: string | number | Date
-) => {
+  value: string | number | Date | null
+):ReactNode => {
   // valor_total: 'Valor total',
   // quantidade_lt: 'Quantidade lt',
   // data: 'Data',
@@ -36,38 +36,38 @@ export const renderValorPdfName = (
   // id_veiculo: 'Veículo',
   switch (name) {
     case 'autorizacao':
-      return value;
+      return value?.toString();
     case 'valor_total':
-      return formatMoney(value);
+      return formatMoney(value as number);
     case 'quantidade_lt':
-      return formatLts(value);
+      return formatLts(value as number);
     case 'data':
-      return visualizeDate(value);
+      return visualizeDate(value as Date);
     case 'obs':
-      return value;
+      return value?.toString();
     case 'cota':
       return value ? 'Sim' : 'Não';
     case 'km':
-      return value;
+      return value?.toString();
     case 'km_l':
-      return value;
+      return value?.toString();
     case 'id_combustivel':
-      return value;
+      return value?.toString();
     case 'id_endereco':
-      return value;
+      return value?.toString();
     case 'id_lubrificante':
-      return value;
+      return value?.toString();
     case 'lubrificante_lt':
-      return value;
+      return value?.toString();
     case 'id_motorista':
-      return value;
+      return value?.toString();
     case 'id_posto':
-      return value;
+      return value?.toString();
     case 'id_secretaria':
-      return value;
+      return value?.toString();
     case 'id_veiculo':
-      return value;
+      return value?.toString();
     default:
-      return value;
+      return value?.toString();
   }
 };

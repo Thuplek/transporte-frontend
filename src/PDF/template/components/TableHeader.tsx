@@ -1,5 +1,4 @@
-import React from 'react';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Text,  StyleSheet } from '@react-pdf/renderer';
 import nameCampoToRender from '@utils/enums/nameCampoToRender';
 import { colors } from '@app/theme/colors';
 const styles = StyleSheet.create({

@@ -7,7 +7,7 @@ import {
   gridVisibleColumnFieldsSelector,
   useGridApiContext,
 } from '@mui/x-data-grid';
-import ReactPDF, { PDFViewer } from '@react-pdf/renderer';
+import { PDFViewer } from '@react-pdf/renderer';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 
@@ -16,7 +16,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 
-const getJson = (apiRef: React.MutableRefObject<GridApi>) => {
+const getJson = (
+  apiRef: React.MutableRefObject<GridApi>
+): { [key: string]: string | number | Date | null }[] => {
   // Select rows and columns
   const filteredSortedRowIds = gridFilteredSortedRowIdsSelector(apiRef);
   const visibleColumnsField = gridVisibleColumnFieldsSelector(apiRef);
@@ -33,7 +35,7 @@ const getJson = (apiRef: React.MutableRefObject<GridApi>) => {
 
   // Stringify with some indentation
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#parameters
-  return JSON.stringify(data, null, 2);
+  // return JSON.stringify(data, null, 2);
 };
 
 export function GerarPdf(props: GridExportMenuItemProps<{}>) {

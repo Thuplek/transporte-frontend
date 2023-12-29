@@ -1,11 +1,10 @@
-import React from 'react';
-import { View, StyleSheet, Text } from '@react-pdf/renderer';
+import { View } from '@react-pdf/renderer';
 
 import { Html } from 'react-pdf-html';
 
 interface ITable {
   coluns: string[];
-  data: [];
+  data: { [key: string]: string | number | Date | null }[];
 }
 
 import ReactDOMServer from 'react-dom/server';
