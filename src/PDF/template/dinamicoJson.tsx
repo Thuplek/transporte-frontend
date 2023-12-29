@@ -1,12 +1,12 @@
-import { Document, Page, Text, View } from '@react-pdf/renderer';
+import { Document, Page } from '@react-pdf/renderer';
 import React from 'react';
 import Table from './components/Table';
 interface IDinamicoJson {
-  json: string;
+  json: { [key: string]: string | number | Date | null }[];
 }
 
 const DinamicoJson: React.FC<IDinamicoJson> = ({ json }) => {
-  const coluns = Object.keys(json[0]);
+  const coluns = Object.keys(json[0] || {});
   return (
     <Document>
       <Page size='A4' orientation='landscape'>

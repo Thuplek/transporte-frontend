@@ -27,7 +27,6 @@ import { useGetAllPosto } from '@hooks/posto/postoHook';
 import { useGetAllSecretaria } from '@hooks/secretaria/secretariaHook';
 import { getlubrificanteById } from '@utils/function/lubrificante';
 import CustomToolbar from '@components/CustomToolbarDataGrid';
-import { GerarPdf } from '@components/CustomToolbarDataGrid/GerarPdf/gerarPdf';
 
 export const AbastecimentoPage = () => {
   const { getAll } = useAbastecimento();

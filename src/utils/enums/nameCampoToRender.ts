@@ -17,7 +17,8 @@ const enumCampo = {
   id_veiculo: 'Veículo',
 };
 
-const nameCampoToRender = (campo) => {
+const nameCampoToRender = (campo: string) => {
+  //@ts-ignore
   return enumCampo[campo];
 };
 export default nameCampoToRender;
